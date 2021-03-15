@@ -1,28 +1,30 @@
-const { DataTypes, Model } = require("sequelize");
+const { DataTypes } = require("sequelize");
 import sequelize from "../configs/database";
 
-class Users extends Model {}
-
-Users.init(
+const Users = sequelize.define(
+  "Users",
   {
     email: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: { isEmail: true },
+      unique: true
     },
-    // Model attributes are defined here
-    firstName: {
+    password: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    lastName: {
+    // Model attributes are defined here
+    first_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    last_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
   },
   {
-    // Other model options go here
-    sequelize, // We need to pass the connection instance
-    modelName: "Users", // We need to choose the model name
     tableName: "users",
   }
 );

@@ -1,13 +1,12 @@
-const { DataTypes, Model, Deferrable } = require("sequelize");
+const { DataTypes, Deferrable } = require("sequelize");
 import sequelize from "../configs/database";
 import Users from "./users";
-
-class Posts extends Model {}
-
-Posts.init(
+const Posts = sequelize.define(
+  "Posts",
   {
     user_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         // This is a reference to another model
         model: Users,
@@ -27,14 +26,11 @@ Posts.init(
       allowNull: false,
     },
     message: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
   },
   {
-    // Other model options go here
-    sequelize, // We need to pass the connection instance
-    modelName: "Posts", // We need to choose the model name
     tableName: "posts",
   }
 );

@@ -1,3 +1,5 @@
+import { associationsInit } from "../models/associations";
+
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize("postgres", "postgres", "password", {
   host: "localhost",
@@ -15,6 +17,7 @@ sequelize
   .authenticate()
   .then(() => {
     sequelize.sync();
+    associationsInit();
     console.log("Connection has been established successfully.");
   })
   .catch((err) => {

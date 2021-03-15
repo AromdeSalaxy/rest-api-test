@@ -3,12 +3,16 @@ import "dotenv/config";
 var express = require("express");
 var app = express();
 
-import authRoute from "./routes/auth";
 import { logRequest, logError } from "./services/logger";
+import { limiter } from "./services/limiter";
+
+import authRoute from "./routes/auth";
+
 app.get("/", function (req, res) {
   res.send("Hello World!");
 });
 
+app.use(limiter);
 app.use(logRequest);
 app.use(logError);
 app.use("/auth", authRoute);

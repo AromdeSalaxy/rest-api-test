@@ -74,7 +74,11 @@ export const getById = async (req, res) => {
     const { post_id } = req.params;
     const post = await Posts.findOne({ where: { id: post_id } });
 
-    return resCreated({ res, result: post });
+    if (!post) {
+      return resNotFound({ res });
+    }
+
+    return resSuccess({ res, result: post });
   } catch (error) {
     return resError({ res, error });
   }

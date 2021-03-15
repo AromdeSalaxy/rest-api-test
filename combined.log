@@ -161,3 +161,11 @@
 {"message":"/posts/create","level":"info","service":"user-service"}
 {"message":"/posts/create","level":"info","service":"user-service"}
 {"message":"/posts","level":"info","service":"user-service"}
+{"message":"/posts/1","level":"info","service":"user-service"}
+{"message":"/posts/1","level":"info","service":"user-service"}
+{"message":"/posts/1","level":"info","service":"user-service"}
+{"message":"/posts/2","level":"info","service":"user-service"}
+{"message":"/posts/2","level":"info","service":"user-service"}
+{"message":"/posts/2","level":"info","service":"user-service"}
+{"message":"/posts/2","level":"info","service":"user-service"}
+{"message":"/posts/3","level":"info","service":"user-service"}

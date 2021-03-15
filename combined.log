@@ -1,0 +1,4 @@
+{"message":"/auth","level":"info","service":"user-service"}
+{"message":"/auth","level":"info","service":"user-service"}
+{"message":"/xxx","level":"info","service":"user-service"}
+{"message":"/auth/1234","level":"info","service":"user-service"}

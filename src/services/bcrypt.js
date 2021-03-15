@@ -5,7 +5,6 @@ const saltRounds = 10; //  Data processing speed
 export const checkPassword = (originPass, hashPass) => {
   return new Promise((resolve) => {
     bcrypt.compare(originPass, hashPass, function (err, result) {
-      console.log("hashPass", result);
       // Compare
       // if passwords match
       if (result) {

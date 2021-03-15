@@ -8,7 +8,7 @@ const Users = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
       validate: { isEmail: true },
-      unique: true
+      unique: true,
     },
     password: {
       type: DataTypes.STRING,

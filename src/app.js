@@ -4,6 +4,7 @@ import { limiter } from "./services/limiter";
 import { auth } from "./services/passport";
 import authRoute from "./routes/auth";
 import usersRoute from "./routes/users";
+import postsRoute from "./routes/posts";
 var express = require("express");
 var app = express();
 
@@ -23,6 +24,7 @@ app.use(logError);
 
 app.use("/auth", authRoute);
 app.use("/users", auth, usersRoute);
+app.use("/posts", auth, postsRoute);
 
 app.listen(process.env.PORT, () => {
   console.log("api started port", process.env.PORT);

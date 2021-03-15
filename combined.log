@@ -1927,3 +1927,4 @@
 {"message":"/posts/update","level":"info","service":"user-service"}
 {"message":"/posts/update","level":"info","service":"user-service"}
 {"message":"/posts/update","level":"info","service":"user-service"}
+{"message":"/posts","level":"info","service":"user-service"}

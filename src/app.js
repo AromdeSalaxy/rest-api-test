@@ -5,6 +5,8 @@ import { auth } from "./services/passport";
 import authRoute from "./routes/auth";
 import usersRoute from "./routes/users";
 import postsRoute from "./routes/posts";
+import swaggerUi from "swagger-ui-express";
+const swaggerDocument = require("./swagger");
 var express = require("express");
 var app = express();
 
@@ -24,8 +26,10 @@ app.use(logError);
 
 app.use("/auth", authRoute);
 app.use("/users", auth, usersRoute);
-app.use("/posts", auth, postsRoute);
+app.use("/posts", postsRoute);
+
+app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.listen(process.env.PORT, () => {
-  console.log("api started port", process.env.PORT);
+  console.log("api started port", process.env.PORT || 3001);
 });

@@ -3,6 +3,7 @@ import {
   resError,
   resNotFound,
   resForbidden,
+  resCreated,
 } from "../services/response";
 import Users from "../models/users";
 import { checkPassword, hashPassword } from "../services/bcrypt";
@@ -19,7 +20,7 @@ export const register = async (req, res) => {
       password: await hashPassword(password),
     });
 
-    return resSuccess({ res, result: user });
+    return resCreated({ res, result: user });
   } catch (error) {
     return resError({ res, error });
   }

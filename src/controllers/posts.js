@@ -7,7 +7,6 @@ import {
   resUpdated,
   resDeleted,
 } from "../services/response";
-import Users from "../models/users";
 import Posts from "../models/posts";
 
 export const create = async (req, res) => {
@@ -48,7 +47,7 @@ export const update = async (req, res) => {
 
 export const destroy = async (req, res) => {
   try {
-    const { post_id } = req.body;
+    const { post_id } = req.params;
     await Posts.destroy({
       where: { id: post_id },
     });

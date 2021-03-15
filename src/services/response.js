@@ -22,7 +22,7 @@ export const resUpdated = ({ res, result, msg, opt, prefix }) => {
   return res.status(200).json({
     code: 1,
     result: result,
-    message: msg || `edited`,
+    message: msg || `updated`,
     ...opt,
   });
 };

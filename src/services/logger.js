@@ -15,6 +15,7 @@ export const logger = winston.createLogger({
 });
 
 export function logRequest(req, res, next) {
+  console.log(req.url, req.body, req.params);
   logger.info(req.url);
   next();
 }
